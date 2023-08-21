@@ -1,0 +1,9 @@
+.spinner {
+    @include flex(center, center, row);
+    padding: 40px 0;
+
+    img {
+        width: 42px;
+        height: 42px;
+    }
+}

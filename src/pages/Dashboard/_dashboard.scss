@@ -1,0 +1,99 @@
+.dashboard {
+  position: relative;
+
+  .main-content {
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    top: 60px;
+    background: #f5f5f5;
+    overflow-y: scroll;
+    padding: 24px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    // CARDS SECTION
+    .cards {
+      margin-bottom: 30px;
+      @include grid(1, 1fr, 10px);
+      width: 100%;
+
+      .card {
+        height: 232px;
+        background: #ffffff;
+        border-radius: 10px;
+        @include flex(center, center, column);
+        padding: 0 0.3rem;
+
+        .img {
+          width: 58.45px;
+          height: 58.45px;
+          margin-bottom: 20px;
+        }
+
+        .info {
+          text-align: center;
+
+          .name {
+            font-weight: 400;
+            font-size: clamp(0.8rem, 3vw, 1rem);
+            line-height: 21px;
+            color: #262d57;
+            margin-bottom: 5px;
+          }
+
+          .num {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 36px;
+            text-align: center;
+            color: #342094;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include for-smallest-phones {
+}
+
+@include for-phone-only {
+}
+
+@include for-tablet-potrait-up {
+  .dashboard {
+    .main-content {
+      padding: 24px 40px;
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+  .dashboard {
+    .main-content {
+      padding: 24px 60px;
+    }
+  }
+}
+
+@include for-desktop-up {
+  .dashboard {
+    .main-content {
+      width: 80%;
+      right: 0;
+      top: 72px;
+      padding: 70px 30px;
+
+      &.back {
+        z-index: -2;
+      }
+    }
+  }
+}
+
+@include for-big-desktop-up {
+}

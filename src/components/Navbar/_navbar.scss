@@ -1,0 +1,107 @@
+nav {
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  right: 0;
+  border: 1px solid #f2f3f3;
+  height: 60px;
+  @include flex(center, center, row);
+
+  .mobile-nav {
+    width: 100%;
+    @include flex(center, space-between, row);
+    padding: 0 24px;
+
+    .menu-nav {
+      @include flex(center, center, row);
+
+      .hambugger {
+        font-size: 1.8rem;
+        margin-right: 24px;
+      }
+
+      h5 {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #081615;
+      }
+    }
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+}
+
+@include for-smallest-phones {
+}
+
+@include for-phone-only {
+}
+
+@include for-tablet-potrait-up {
+  nav {
+    .mobile-nav {
+      padding: 0 40px;
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+}
+
+@include for-desktop-up {
+  nav {
+    height: 72px;
+    width: 80%;
+    right: 0;
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .desktop-nav {
+      @include flex(center, space-between, row);
+      width: 100%;
+      padding: 0 40px 0 30px;
+
+      .navigation {
+        color: #081615;
+        @include flex(center, center, row);
+
+        h5 {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          margin-right: 10px;
+        }
+
+        .icon {
+          margin: 0 5px;
+        }
+      }
+
+      .profile {
+        @include flex(center, center, row);
+
+        .notification {
+          font-size: 1.5rem;
+          margin-right: 20px;
+          cursor: pointer;
+        }
+
+        .dropdown {
+          margin-left: 14px;
+          color: #979797;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@include for-big-desktop-up {
+}

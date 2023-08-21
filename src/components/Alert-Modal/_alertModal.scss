@@ -1,0 +1,62 @@
+.alert-modal {
+    @include flex(center, center, row);
+    padding: 0.8rem 1rem;
+    position: absolute;
+    z-index: 50;
+    background: $redColor;
+    left: 22%;
+    top: 6px;
+    color: #ffffff;
+    border-radius: 4px;
+
+    h2 {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .icon {
+        font-size: 1.3rem;
+        margin-right: 10px;
+    }
+}
+
+
+@include for-smallest-phones {
+    .alert-modal {
+        left: 19%;
+        top: 6px;
+
+        h2 {
+            font-size: 12px;
+        }
+
+        .icon {
+            font-size: 1rem;
+        }
+    }
+}
+
+@include for-phone-only {}
+
+@include for-tablet-potrait-up {
+    .alert-modal {
+        left: 35%;
+        top: 6px;
+
+        h2 {
+            font-size: 16px;
+        }
+    }
+}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .alert-modal {
+        padding: 0.8rem 1rem;
+        top: 13px;
+        left: 50%;
+    }
+}
+
+@include for-big-desktop-up {}

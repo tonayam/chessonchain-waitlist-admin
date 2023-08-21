@@ -1,0 +1,60 @@
+.functions-bar {
+    margin-bottom: 30px;
+    @include flex(center, space-between, row);
+    overflow-x: scroll;
+
+    .page-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #303032;
+        margin-right: 1rem
+    }
+
+    .functions {
+        @include flex(center, space-between, row);
+
+        .search-bar {
+            background: #FFFFFF;
+            border: 1.5px solid rgba(52, 32, 148, 0.2);
+            box-shadow: 0px 1px 1px rgba(123, 123, 123, 0.16);
+            border-radius: 6px;
+            @include flex(center, space-between, row);
+            padding: 10px 8px;
+
+            .icon {
+                font-size: 1.5rem;
+            }
+        }
+
+
+        button {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            margin-left: 1rem;
+            min-width: 160px;
+        }
+    }
+
+}
+
+@include for-smallest-phones {}
+
+@include for-phone-only {}
+
+@include for-tablet-potrait-up {}
+
+@include for-tablet-landscape-up {}
+
+@include for-desktop-up {
+    .functions-bar {
+        overflow-x: hidden;
+
+        button {
+            min-width: none;
+        }
+    }
+}
+
+@include for-big-desktop-up {}

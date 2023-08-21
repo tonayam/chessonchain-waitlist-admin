@@ -1,0 +1,232 @@
+aside {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: 0.3s linear all;
+  z-index: 10;
+
+  .dark-overlay {
+    width: 60%;
+    background: #ffffff;
+    padding: 20px 10px 100px 10px;
+    height: 100%;
+    border: 1px solid #f2f3f3;
+    overflow-y: scroll;
+
+    .void {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 40%;
+    }
+
+    .logo-close {
+      @include flex(center, space-between, row);
+
+      h2 {
+        font-size: clamp(1.3rem, 4vw, 1.4rem);
+        font-family: 'Share Tech', sans-serif;
+      }
+
+      .close-btn {
+        font-size: 1.2rem;
+      }
+    }
+
+    .profile {
+      @include flex(center, flex-start, row);
+      margin-top: 40px;
+      position: relative;
+
+      .name {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        margin: 0 10px;
+        padding: 0.7rem 0.5rem;
+        border-radius: 50%;
+        background: $primaryColor;
+        text-transform: capitalize;
+        color: #ffffff;
+      }
+
+      .dropdown {
+        color: #979797;
+      }
+    }
+
+    .menu,
+    .management,
+    .notification,
+    .settings {
+      margin-top: 20px;
+
+      h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 21px;
+        color: #434856;
+        padding: 0 20px;
+      }
+
+      ul {
+        margin-top: 10px;
+
+        li {
+          @include flex(center, flex-start, row);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 19px;
+          color: #434856;
+          margin: 10px 0;
+          padding: 10px 20px;
+          border-radius: 8px;
+          cursor: pointer;
+
+          a {
+            @include flex(center, flex-start, row);
+
+            .icon {
+              font-size: 1.5rem;
+              margin-right: 14px;
+            }
+          }
+
+          &.active {
+            background: $primaryColor;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+@include for-smallest-phones {
+  aside {
+    .dark-overlay {
+      width: 80%;
+
+      .void {
+        width: 20%;
+      }
+    }
+  }
+}
+
+@include for-phone-only {
+  aside {
+    .dark-overlay {
+      width: 70%;
+
+      .void {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@include for-tablet-potrait-up {
+  aside {
+    .dark-overlay {
+      width: 50%;
+      padding: 20px 24px 100px 24px;
+
+      .void {
+        width: 50%;
+      }
+
+      .profile {
+        padding-left: 20px;
+      }
+
+      .menu,
+      .management,
+      .notification,
+      .settings {
+        margin-top: 20px;
+
+        h3 {
+          font-size: 18px;
+        }
+
+        ul {
+          li {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .settings {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@include for-tablet-landscape-up {
+}
+
+@include for-desktop-up {
+  aside {
+    width: 20%;
+    background: #ffffff;
+    border: 1px solid #f2f3f3;
+    transform: translateX(0);
+
+    .dark-overlay {
+      width: 100%;
+      padding: 20px 10px;
+      scrollbar-width: none;
+
+      .void {
+        display: none;
+      }
+
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-track {
+        display: none;
+        width: 0;
+      }
+
+      .logo-close {
+        padding: 0 1rem;
+
+        .close-btn {
+          display: none;
+        }
+      }
+
+      .profile {
+        display: none;
+      }
+
+      .menu,
+      .management,
+      .notification,
+      .settings {
+        h3 {
+          font-size: 18px;
+        }
+
+        ul {
+          li {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include for-big-desktop-up {
+}
