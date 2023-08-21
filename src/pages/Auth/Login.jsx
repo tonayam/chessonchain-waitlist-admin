@@ -104,7 +104,7 @@ const Login = () => {
                 id='password'
               />
             </div>
-            <button type='submit' className='orange'>
+            <button type='submit' className='green'>
               Login {loading ? <img src={spinner} alt='spinner' /> : null}
             </button>
           </form>
